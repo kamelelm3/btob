@@ -1,5 +1,8 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'details.dart';
+import 'intro_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,31 +16,35 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'abii_btob',
       theme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
+        colorScheme: const ColorScheme.dark(),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: IntroPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key, required this.title});
   final String title;
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _HomePageState extends State<HomePage> {
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void _skip_id_page() {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => const DetailsPage()));
+  }
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
 
   @override
@@ -51,19 +58,32 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have cliked the button this many times:',
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextField(
+                controller: _usernameController,
+                decoration: const InputDecoration(
+                  labelText: 'Identifiant',
+                ),
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextField(
+                controller: _passwordController,
+                obscureText: true, // Pour masquer le mot de passe
+                decoration: const InputDecoration(
+                  labelText: 'Mot de passe',
+                ),
+              ),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
+        onPressed: _skip_id_page,
+        tooltip: 'Skip',
         child: const Icon(Icons.add),
       ),
     );
