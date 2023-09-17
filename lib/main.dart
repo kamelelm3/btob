@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'abii_btob',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -36,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => DetailsPage()));
+        .push(MaterialPageRoute(builder: (context) => const DetailsPage()));
   }
 
   @override
