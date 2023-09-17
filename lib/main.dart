@@ -1,8 +1,8 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, camel_case_types
 
 import 'package:flutter/material.dart';
-import 'details.dart';
-import 'intro_page.dart';
+import 'home_page.dart';
+import 'intro_page1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,20 +24,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
+class loginPage extends StatefulWidget {
+  const loginPage({super.key, required this.title});
   final String title;
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<loginPage> createState() => _loginPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _loginPageState extends State<loginPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   void _skip_id_page() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const DetailsPage()));
+        .push(MaterialPageRoute(builder: (context) => const MainPage()));
   }
 
   @override
