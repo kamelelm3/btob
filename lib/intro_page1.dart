@@ -13,11 +13,10 @@ class _IntroPageState extends State<IntroPage> {
   @override
   void initState() {
     super.initState();
-    // Schedule a navigation after 2 seconds
-    Future.delayed(const Duration(seconds: 10), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-            builder: (context) => const loginPage(title: 'abii B 2 B app')),
+            builder: (context) => const loginPage(title: 'abii B2B app')),
       );
     });
   }
@@ -32,7 +31,6 @@ class _IntroPageState extends State<IntroPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Add the SVG image here
             SvgPicture.asset(
               'assets/intro/abii-3.svg',
             ),

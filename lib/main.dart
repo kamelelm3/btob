@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'intro_page1.dart';
+import 'intro_page2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -82,7 +83,13 @@ class _loginPageState extends State<loginPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _skip_id_page,
+        // onPressed: _skip_id_page,
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (context) => IntroPage2()), // Change to IntroPage
+          );
+        },
         tooltip: 'Skip',
         child: const Icon(Icons.add),
       ),

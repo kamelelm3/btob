@@ -25,3 +25,9 @@ flutter:
   uses-material-design: true
   assets:
     - assets/intro/abii-3.svg
+    - assets/intro/background2.png
+
+    - assets/homepage/braintap.svg
+    - assets/homepage/donnee.svg
+    - assets/homepage/donnee2.svg
+    - assets/homepage/shop.svg
