@@ -12,7 +12,7 @@ class _IntroPage2State extends State<IntroPage2> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 6), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const MainPage()),
       );
@@ -32,8 +32,10 @@ class _IntroPage2State extends State<IntroPage2> {
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/intro/background2.png'),
-                fit: BoxFit.cover,
+                // image: AssetImage('assets/intro/background2.png'),
+                // image: AssetImage('assets/intro/service_svg.svg'),
+                image: AssetImage('assets/intro/service_gif.gif'),
+                // fit: BoxFit.cover,
               ),
             ),
           ),

@@ -26,6 +26,10 @@ flutter:
   assets:
     - assets/intro/abii-3.svg
     - assets/intro/background2.png
+    - assets/intro/background2.png
+    - assets/intro/service_avi.avi
+    - assets/intro/service_gif.gif
+    - assets/intro/service_svg.svg
 
     - assets/homepage/braintap.svg
     - assets/homepage/donnee.svg
