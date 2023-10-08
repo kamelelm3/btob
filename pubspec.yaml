@@ -24,14 +24,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/intro/abii-3.svg
-    - assets/intro/background2.png
-    - assets/intro/background2.png
-    - assets/intro/service_avi.avi
-    - assets/intro/service_gif.gif
-    - assets/intro/service_svg.svg
+    - assets/intro/logo_abii.svg
+    - assets/intro/service.gif
 
     - assets/homepage/braintap.svg
-    - assets/homepage/donnee.svg
+    - assets/homepage/statistics.svg
     - assets/homepage/donnee2.svg
     - assets/homepage/shop.svg
