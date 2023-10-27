@@ -1,6 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'dai_state.dart';
+import 'statistics.dart';
+import 'shops.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -20,90 +24,112 @@ class _MainPageState extends State<MainPage> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          // Ajout de SingleChildScrollView pour le défilement vertical
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const SizedBox(height: 20),
-              // Utilisez un Column pour aligner les images en colonne
               Column(
                 children: <Widget>[
                   ElevatedButton(
                     onPressed: () {
-                      setState(() {
-                        selectedOption = 'BrainTap';
-                      });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => dai_state()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: selectedOption == 'BrainTap'
-                          ? Colors.blue // Couleur du bouton sélectionné
+                          ? Color.fromARGB(
+                              255, 207, 93, 0) // Couleur du bouton sélectionné
                           : null,
                     ),
-                    child: Container(
-                      width:
-                          double.infinity, // Prend toute la largeur de l'écran
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: AspectRatio(
-                          aspectRatio:
-                              1.0, // Ratio de 1:1 pour conserver la proportion
+                    child: Row(
+                      children: [
+                        FractionallySizedBox(
                           child: SvgPicture.asset(
-                            'assets/homepage/donnee.svg', // Chemin de l'image SVG
+                            'assets/homepage/beer.svg',
                           ),
                         ),
-                      ),
+                        SizedBox(width: 20),
+                        Text(
+                          'BrainTap',
+                          style: TextStyle(
+                            fontSize: 16, // Définissez la taille de la police
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Icon(
+                          Icons.arrow_right_outlined, // Icône de la flèche
+                          size: 30, // Taille de l'icône
+                        ),
+                      ],
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      setState(() {
-                        selectedOption = 'Statistics';
-                      });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => statistics()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: selectedOption == 'Statistics'
                           ? Colors.blue // Couleur du bouton sélectionné
                           : null,
                     ),
-                    child: Container(
-                      width:
-                          double.infinity, // Prend toute la largeur de l'écran
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: AspectRatio(
-                          aspectRatio:
-                              1.0, // Ratio de 1:1 pour conserver la proportion
+                    child: Row(
+                      children: [
+                        FractionallySizedBox(
                           child: SvgPicture.asset(
-                            'assets/homepage/statistics.svg', // Chemin de l'image SVG
+                            'assets/homepage/statistics.svg',
                           ),
                         ),
-                      ),
+                        SizedBox(width: 20),
+                        Text(
+                          'Statistics',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Icon(
+                          Icons.arrow_right_outlined, // Icône de la flèche
+                          size: 30, // Taille de l'icône
+                        ),
+                      ],
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      setState(() {
-                        selectedOption = 'Shop';
-                      });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => shops()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: selectedOption == 'Shop'
                           ? Colors.blue // Couleur du bouton sélectionné
                           : null,
                     ),
-                    child: Container(
-                      width:
-                          double.infinity, // Prend toute la largeur de l'écran
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: AspectRatio(
-                          aspectRatio:
-                              1.0, // Ratio de 1:1 pour conserver la proportion
+                    child: Row(
+                      children: [
+                        FractionallySizedBox(
                           child: SvgPicture.asset(
-                            'assets/homepage/shop.svg', // Chemin de l'image SVG
+                            'assets/homepage/shop.svg',
                           ),
                         ),
-                      ),
+                        SizedBox(width: 20),
+                        Text(
+                          'Shop',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Icon(
+                          Icons.arrow_right_outlined, // Icône de la flèche
+                          size: 30, // Taille de l'icône
+                        ),
+                      ],
                     ),
                   ),
                 ],
