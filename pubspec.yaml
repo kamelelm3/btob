@@ -33,8 +33,8 @@ flutter:
     - assets/homepage/statistics.svg
     - assets/homepage/shop.svg
 
-    - assets/createdistributor/dai.svg
-    - assets/createdistributor/tai.svg
-    - assets/createdistributor/wall.svg
-    - assets/createdistributor/Biere_Truck.svg
-    - assets/createdistributor/cleaner.svg
+    - assets/distributor/dai.svg
+    - assets/distributor/tai.svg
+    - assets/distributor/wall.svg
+    - assets/distributor/Truck.svg
+    - assets/distributor/cleaner.svg
