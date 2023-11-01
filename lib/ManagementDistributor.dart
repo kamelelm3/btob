@@ -3,8 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:btob/classe/Distributor.dart';
 import 'package:btob/classe/DistributorList.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 Map<String, String> typeToSvgMap = {
   'DAI': 'assets/distributor/DAI.svg',
@@ -26,7 +24,7 @@ class ManagementDistributor extends StatelessWidget {
       body: Consumer<DistributorListNotifier>(
         builder: (context, distributorNotifier, child) {
           if (distributorNotifier.distributorList.getDistributorCount() == 0) {
-            return Center(
+            return const Center(
               child: Text('empty'),
             );
           } else {

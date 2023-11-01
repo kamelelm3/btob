@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import 'ManagementDistributor.dart';
 import 'stat/StatPage1.dart';
 import 'shops.dart';
-import 'package:btob/classe/DistributorList.dart';
 
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> distributorOptions = ['Distributor', 'Statistics', 'Shop'];
     String selectedOption = 'Distributor';
-    final distributorNotifier = Provider.of<DistributorListNotifier>(context);
 
     return Scaffold(
       appBar: AppBar(
