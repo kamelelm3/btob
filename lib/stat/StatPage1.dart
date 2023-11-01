@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-class statistics_p1 extends StatefulWidget {
+class StatPage1 extends StatefulWidget {
   @override
-  _statistics_p1 createState() => _statistics_p1();
+  _StatPage1 createState() => _StatPage1();
 }
 
-class _statistics_p1 extends State<statistics_p1> {
+class _StatPage1 extends State<StatPage1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

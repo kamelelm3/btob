@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
-import 'animation_service.dart';
+import 'MainPage.dart';
+import 'AnimationService.dart';
 
 class loginPage extends StatefulWidget {
   const loginPage({super.key, required this.title});
@@ -15,7 +15,7 @@ class _loginPageState extends State<loginPage> {
 
   void _skip_id_page() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const MainPage()));
+        .push(MaterialPageRoute(builder: (context) => MainPage()));
   }
 
   @override

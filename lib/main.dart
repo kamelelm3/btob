@@ -1,10 +1,21 @@
 // ignore_for_file: non_constant_identifier_names, camel_case_types
 
 import 'package:flutter/material.dart';
-import 'animation_intro_abii.dart';
+import 'AnimationABII.dart';
+import 'package:provider/provider.dart';
+import 'classe/DistributorList.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => DistributorListNotifier(),
+        ),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

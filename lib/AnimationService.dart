@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, library_private_types_in_public_api, use_key_in_widget_constructors
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'MainPage.dart';
 
 class AnimationService extends StatefulWidget {
   @override
@@ -15,7 +15,7 @@ class _AnimationServiceState extends State<AnimationService> {
     // Future.delayed(const Duration(milliseconds: 6500), () {
     Future.delayed(const Duration(milliseconds: 500), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const MainPage()),
+        MaterialPageRoute(builder: (context) => MainPage()),
       );
     });
   }

@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.7
   fl_chart: ^0.64.0
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +29,12 @@ flutter:
     - assets/intro/logo_abii.svg
     - assets/intro/service.gif
     
-    - assets/homepage/statistics.svg
     - assets/homepage/beer.svg
+    - assets/homepage/statistics.svg
     - assets/homepage/shop.svg
+
+    - assets/createdistributor/dai.svg
+    - assets/createdistributor/tai.svg
+    - assets/createdistributor/wall.svg
+    - assets/createdistributor/Biere_Truck.svg
+    - assets/createdistributor/cleaner.svg

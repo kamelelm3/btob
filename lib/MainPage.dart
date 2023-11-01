@@ -1,23 +1,18 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'stat/statistics_p1.dart';
+import 'package:provider/provider.dart';
+import 'ManagementDistributor.dart';
+import 'stat/StatPage1.dart';
 import 'shops.dart';
-import 'create_distributor.dart';
+import 'package:btob/classe/DistributorList.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
-
-  @override
-  _MainPageState createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  List<String> distributorOptions = ['Statistics', 'Shop'];
-  String selectedOption = 'Statistics';
-
+class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    List<String> distributorOptions = ['Distributor', 'Statistics', 'Shop'];
+    String selectedOption = 'Distributor';
+    final distributorNotifier = Provider.of<DistributorListNotifier>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Accueil'),
@@ -30,11 +25,11 @@ class _MainPageState extends State<MainPage> {
               for (String option in distributorOptions)
                 ElevatedButton(
                   onPressed: () {
-                    if (option == 'Statistics') {
+                    if (option == 'Distributor') {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => statistics_p1(),
+                          builder: (context) => ManagementDistributor(),
                         ),
                       );
                     } else if (option == 'Shop') {
@@ -42,6 +37,13 @@ class _MainPageState extends State<MainPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => shops(),
+                        ),
+                      );
+                    } else if (option == 'Statistics') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StatPage1(),
                         ),
                       );
                     }
@@ -53,6 +55,12 @@ class _MainPageState extends State<MainPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      if (option == 'Distributor')
+                        FractionallySizedBox(
+                          child: SvgPicture.asset(
+                            'assets/homepage/beer.svg',
+                          ),
+                        ),
                       if (option == 'Statistics')
                         FractionallySizedBox(
                           child: SvgPicture.asset(
@@ -73,31 +81,12 @@ class _MainPageState extends State<MainPage> {
                         ),
                       ),
                       Icon(
-                        Icons.arrow_right_outlined, // Icône de la flèche
-                        size: 50, // Taille de l'icône
+                        Icons.arrow_right_outlined,
+                        size: 50,
                       ),
                     ],
                   ),
                 ),
-              ElevatedButton(
-                onPressed: () async {
-                  final newDistributor = await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CreateDistributor(),
-                    ),
-                  );
-                  if (newDistributor != null) {
-                    setState(() {
-                      distributorOptions.add(newDistributor);
-                    });
-                  }
-                },
-                child: Icon(
-                  Icons.add,
-                  size: 30,
-                ),
-              ),
             ],
           ),
         ),
