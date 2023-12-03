@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+  dio: ^5.3.3
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.7
   fl_chart: ^0.64.0
@@ -36,5 +36,5 @@ flutter:
     - assets/distributor/dai.svg
     - assets/distributor/tai.svg
     - assets/distributor/wall.svg
-    - assets/distributor/Truck.svg
+    - assets/distributor/truck.svg
     - assets/distributor/cleaner.svg

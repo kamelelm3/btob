@@ -5,21 +5,23 @@ import 'package:btob/classe/Distributor.dart';
 import 'package:btob/classe/DistributorList.dart';
 
 Map<String, String> typeToSvgMap = {
-  'DAI': 'assets/distributor/DAI.svg',
-  'TAI': 'assets/distributor/TAI.svg',
-  'Wall': 'assets/distributor/Wall.svg',
-  'Truck': 'assets/distributor/Truck.svg',
-  'Cleaner': 'assets/distributor/Cleaner.svg',
+  'dai': 'assets/distributor/dai.svg',
+  'tai': 'assets/distributor/tai.svg',
+  'wall': 'assets/distributor/wall.svg',
+  'truck': 'assets/distributor/truck.svg',
+  'cleaner': 'assets/distributor/cleaner.svg',
 };
 
 class ManagementDistributor extends StatelessWidget {
+  const ManagementDistributor({super.key});
+
   @override
   Widget build(BuildContext context) {
     final distributorNotifier = Provider.of<DistributorListNotifier>(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gestion des Distributeurs'),
+        title: const Text('Gestion des Distributeurs'),
       ),
       body: Consumer<DistributorListNotifier>(
         builder: (context, distributorNotifier, child) {
@@ -39,6 +41,8 @@ class ManagementDistributor extends StatelessWidget {
                   subtitle: Text(distributor.type),
                   leading: SvgPicture.asset(
                     typeToSvgMap[distributor.type]!,
+                    width: 100, // Largeur souhaitée
+                    height: 100, // Hauteur souhaitée,
                   ),
                 );
               },
@@ -53,7 +57,7 @@ class ManagementDistributor extends StatelessWidget {
             onPressed: () {
               _showAddDistributorDialog(context, distributorNotifier);
             },
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
           FloatingActionButton(
             onPressed: () {
@@ -63,7 +67,7 @@ class ManagementDistributor extends StatelessWidget {
                 distributorNotifier.removeDistributor(distributors.last);
               }
             },
-            child: Icon(Icons.delete),
+            child: const Icon(Icons.delete),
           ),
         ],
       ),
@@ -73,13 +77,13 @@ class ManagementDistributor extends StatelessWidget {
   void _showAddDistributorDialog(
       BuildContext context, DistributorListNotifier distributorNotifier) {
     String newName = "";
-    String newType = "DAI";
+    String newType = "dai";
 
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Ajouter un Distributeur'),
+          title: const Text('Ajouter un Distributeur'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -87,7 +91,8 @@ class ManagementDistributor extends StatelessWidget {
                 onChanged: (value) {
                   newName = value;
                 },
-                decoration: InputDecoration(labelText: 'Nom de la machine'),
+                decoration:
+                    const InputDecoration(labelText: 'Nom de la machine'),
               ),
               DropdownButton<String>(
                 value: newType,
@@ -120,7 +125,7 @@ class ManagementDistributor extends StatelessWidget {
                   );
                 }
               },
-              child: Text('Ajouter'),
+              child: const Text('Ajouter'),
             ),
           ],
         );

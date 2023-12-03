@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'ManagementDistributor.dart';
@@ -73,11 +74,11 @@ class MainPage extends StatelessWidget {
                       const SizedBox(height: 80),
                       Text(
                         option,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.arrow_right_outlined,
                         size: 50,
                       ),

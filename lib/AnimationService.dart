@@ -12,8 +12,8 @@ class _AnimationServiceState extends State<AnimationService> {
   @override
   void initState() {
     super.initState();
-    // Future.delayed(const Duration(milliseconds: 6500), () {
-    Future.delayed(const Duration(milliseconds: 500), () {
+    Future.delayed(const Duration(milliseconds: 6500), () {
+      // Future.delayed(const Duration(milliseconds: 500), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => MainPage()),
       );

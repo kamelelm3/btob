@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'loginPage.dart';
+// import 'loginPage_v2.dart';
 
 class AnimationABII extends StatefulWidget {
   @override
@@ -13,10 +14,11 @@ class _AnimationABIIState extends State<AnimationABII> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 1), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
             builder: (context) => const loginPage(title: 'abii B2B app')),
+        // builder: (context) => const loginPage_v2(title: 'abii B2B app')),
       );
     });
   }
